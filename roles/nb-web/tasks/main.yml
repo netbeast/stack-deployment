@@ -1,0 +1,6 @@
+---
+- name: Creates the directory for the web server
+  file: path=/home/ubuntu/deploy/server state=directory
+
+#- name: Install dependencies
+#  npm: path=/app/location

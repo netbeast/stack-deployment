@@ -1,0 +1,19 @@
+---
+- name: Install nginx
+  apt: name=nginx state=present
+
+- name: Copy nginx configuration for netbeast-website
+  template: src=netbeast dest=/etc/nginx/sites-enabled/netbeast
+
+- name: Copy certs (chain)
+  copy: src=/Users/fcojriosbello/Documents/NetBeast/key/stack-certs/chain.pem dest=/etc/ssl/chain.pem
+
+- name: Copy certs (nb-key)
+  copy: src=/Users/fcojriosbello/Documents/NetBeast/key/stack-certs/nb-key.pem dest=/etc/ssl/nb-key.pem
+
+- name: Replace config file
+  command: rm -rf /etc/nginx/nginx.config
+
+- name: Add new config file
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf
+  notify: restart nginx

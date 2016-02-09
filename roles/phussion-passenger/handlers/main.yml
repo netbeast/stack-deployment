@@ -1,0 +1,3 @@
+---
+- name: validate configuration phussion-passenger
+  command: passenger-config validate-install
