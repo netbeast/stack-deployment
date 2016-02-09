@@ -12,3 +12,5 @@ sudo npm install
 
 You must change the ``` Copy certs``` tasks in ```nginx/tasks/main.yml``` file
 according to the current location of your certs.
+
+Remember to change ```hosts``` file with the correct IP
