@@ -1,0 +1,11 @@
+---
+- name: Install WordPress, MySQL, Nginx, and PHP-FPM
+  hosts: base_stack
+  remote_user: ubuntu
+  sudo: yes
+
+  roles:
+    - common
+    - nginx
+    - phussion-passenger
+    - nb-web
