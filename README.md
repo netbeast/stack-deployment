@@ -1,6 +1,19 @@
 # netbeast-stack-ansible
 
 It's a complete Ansible Playbook faced on NB stack deployment.
+Introduce the IP address of your server in ```hosts```file.
+
+Copy ssh key in the server by typing 
+```ssh-copy-id USER@IP_ADDRESS```
+*You need to have your public key in ```~/.ssh/authored_keys```before doing it.
+*User is ```ubuntu``` in AWS (Ubuntu 14.04)
+
+Once you've copied ssh keys, you can start executing tasks!
+
+```ansible-playbooks -i hosts site.yml```
+
+You must prepare Netbeast website source code in the correct location:
+
 It only needs to execute the following commands:
 ```
 cd ~/deploy/server
